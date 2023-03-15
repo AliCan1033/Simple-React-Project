@@ -1,0 +1,41 @@
+{
+  "employee": [
+    {
+      "name": "İlkcan Irtürk",
+      "email": "irturk@gmail.com",
+      "phone": "98899090",
+      "active": true,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Selda Elmad",
+      "email": "elma@gmail.com",
+      "phone": "98899090"
+    },
+    {
+      "id": 3,
+      "name": "Görkem Özdemir",
+      "email": "ozdemir@in.com",
+      "phone": "908908767"
+    },
+    {
+      "id": 4,
+      "name": "Gülbeyaz Sarıkaya",
+      "email": "sarikaya@in.com",
+      "phone": "908908767"
+    },
+    {
+      "id": 5,
+      "name": "Ömer Memişoğlu",
+      "email": "memisoglu@in.com",
+      "phone": "908908767"
+    },
+    {
+      "id": 6,
+      "name": "Mustafa Kaan Boztosun",
+      "email": "boztosun@in.com",
+      "phone": "908908767"
+    }
+  ]
+}
