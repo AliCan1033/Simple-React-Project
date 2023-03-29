@@ -2,8 +2,30 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from './api/axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmpCreate = () => {
+
+    const notify = () => {
+        toast("Basic Notification");
+        toast.info("Info Notification");
+        toast.success("success Notification");
+        toast.warning("warning Notification");
+        toast.error("error Notification");
+     
+        toast("Basic Notification",{position:toast.POSITION.TOP_LEFT,theme:'colored'});
+        toast.info("Info Notification",{position:toast.POSITION.TOP_LEFT,theme:'colored'});
+        toast.success("success Notification",{position:toast.POSITION.TOP_LEFT,theme:'colored'});
+        toast.warning("warning Notification",{position:toast.POSITION.TOP_LEFT,theme:'colored'});
+        toast.error("error Notification",{position:toast.POSITION.TOP_LEFT,theme:'colored'});
+     
+        toast("Basic Notification",{position:toast.POSITION.TOP_CENTER,theme:'dark'});
+        toast.info("Info Notification",{position:toast.POSITION.TOP_CENTER,theme:'dark'});
+        toast.success("success Notification",{position:toast.POSITION.TOP_CENTER,theme:'dark'});
+        toast.warning("warning Notification",{position:toast.POSITION.TOP_CENTER,theme:'dark'});
+        toast.error("error Notification",{position:toast.POSITION.TOP_CENTER,theme:'dark'});
+    }
 
     const [id, idChange] = useState("");
     const [name, nameChange] = useState("");
@@ -32,11 +54,11 @@ const EmpCreate = () => {
         })
   
       }*/
-  
+
     //second way
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const empdata = {id,name,email,phone,active};
+        const empdata = { id, name, email, phone, active };
         try {
             await axios.post('/employee', JSON.stringify(empdata),
                 {
@@ -44,11 +66,12 @@ const EmpCreate = () => {
                     withCredentials: true
                 })
             //console.log(JSON.stringify(response));
-            alert('Saved success if you close this screen select ok.');
+            //alert('Saved success if you close this screen select ok.');
             nameChange('');
             emailChange('');
             phoneChange('');
-            navigate('/')
+            //navigate('/')
+
         } catch (err) {
             console.error(err);
         }
@@ -64,7 +87,7 @@ const EmpCreate = () => {
 
                         <div className="card" style={{ "textAlign": "left" }}>
                             <div className="card-title">
-                                <h2>Employee Edit</h2>
+                                <h2>Employee Create</h2>
                             </div>
                             <div className="card-body">
 
@@ -73,10 +96,10 @@ const EmpCreate = () => {
                                     <div hidden className="col-lg-12">
                                         <div className="form-group">
                                             <label>ID</label>
-                                            <input 
-                                            value={id} 
-                                            disabled="disabled" 
-                                            className="form-control"
+                                            <input
+                                                value={id}
+                                                disabled="disabled"
+                                                className="form-control"
                                             ></input>
                                         </div>
                                     </div>
@@ -129,7 +152,7 @@ const EmpCreate = () => {
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="form-group">
-                                            <button className="btn btn-success" type="submit">Save</button>
+                                            <button onClick={notify} className="btn btn-success" type="submit">Save</button>
                                             <Link to="/" className="btn btn-danger">Back</Link>
                                         </div>
                                     </div>
@@ -137,6 +160,7 @@ const EmpCreate = () => {
                             </div>
                         </div>
                     </form>
+                    <ToastContainer />
                 </div>
             </div>
         </div>

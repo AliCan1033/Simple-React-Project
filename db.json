@@ -1,11 +1,10 @@
 {
   "employee": [
     {
+      "id": 1,
       "name": "İlkcan Irtürk",
       "email": "irturk@gmail.com",
-      "phone": "98899090",
-      "active": true,
-      "id": 1
+      "phone": "98899090"
     },
     {
       "id": 2,
@@ -36,6 +35,13 @@
       "name": "Mustafa Kaan Boztosun",
       "email": "boztosun@in.com",
       "phone": "908908767"
+    },
+    {
+      "id": 7,
+      "name": "asd",
+      "email": "asd",
+      "phone": "asd",
+      "active": false
     }
   ]
 }
